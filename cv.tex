@@ -1,0 +1,150 @@
+\documentclass[a4paper,10pt, margin=2in]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{longtable}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Rohith \textsc{Prakash}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+%\section{Personal Data}
+
+%\begin{tabular}{rl}
+114 E31st St. \#201, Austin, TX 78705  \hfill{+1 (972) 352-0082}  \\
+rohith.prakash@utexas.edu \hfill{https://github.com/rnprakash}
+%\end{tabular}
+
+
+\section{Research Interests}
+\begin{tabular}{rl}
+Security \& Privacy & Differential privacy; contention and covert side channels; inference\\
+~&  attacks; machine learning;  OS and systems level defenses\\
+Computer Arch. & Memory and cache systems; hardware modifications for private queues \\
+Current Research & Resource-agnostic side channel defense: apply differential privacy to \\
+~&generative models of program execution to obfuscate payloads
+\end{tabular}
+	
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}
+ \textsc{Current} & Masters + PhD in \textsc{Computer Engineering}, \textbf{University of Texas}, Austin\\
+& Research Topics: Secure memory controllers, machine learning and privacy\\
+& algorithms for time series data, optimization algorithms.\\
+& {\small Advisor: Prof. Mohit \textsc{Tiwari}} \hfill {\normalsize \textsc{Gpa}: 3.7~~~~~}\\\\
+ \textsc{May} 2014 & Bachelor of Science in \textsc{Computer Engineering}, \textbf{University of Texas}, Austin\\
+& Topic: \textsc{Computer Architecture} {\hfill \normalsize \textsc{Gpa}: 3.7~~~~} \\
+& Senior Project: ``TEx86: A FAST Simulator for Processor Design Architects'' \\
+& {\small Advisor: Prof. Derek \textsc{Chiou}}\\\\
+ \textsc{May} 2014 & Bachelor of Science in \textsc{Mathematics}, \textbf{University of Texas}, Austin\\
+& Topic: \textsc{Pure Mathematics} {\hfill \normalsize \textsc{Gpa}: 3.5~~~~}\\\\
+\end{tabular}
+
+%Section: Work Experience
+\section{Work Experience}
+\begin{longtable}{r|p{11cm}}
+ \textsc{Jan 2015\textemdash} & Graduate Research Assistant \\\emph{Current}&\emph{\textsc{UT Austin}}\\
+&\footnotesize{Intelligent characterization and optimization of attacker models for side-channel security attacks using machine learning and optimization techniques. Use Markov, stochastic, wavelet, and other methods in conjunction with dimensionality reduction on the resulting time-series to demonstrate potential information leakage.}\\
+&\footnotesize{Design of memory controller for obfuscation of memory traces using differential privacy. Model memory patterns of program workloads and obfuscate the resulting memory traces with the Laplacian differential privacy method. }\\
+&\footnotesize{Thwarting queue contention channels with differential privacy. Creation of a generic queue architectural structure which can be tuned to give variable privacy guarantees with speed trade-offs.}\\
+&\footnotesize{Reduction of network side channel leakage over SSL/TLS connections by modifying hardware encryption module for network I/O. Apply differential privacy in hardware to models created from common network traffic, reducing adversaries' abilities to glean private information.
+}
+\\\multicolumn{2}{c}{} \\
+ \textsc{May 2015\textemdash} & Security Research Intern \\\textsc{Aug 2015}&\emph{\textsc{Altera Corp}}\\&\footnotesize{Researched, tested, and analyzed various hardware and algorithmic implementations for physical-unclonable functions (PUFs).}\\
+&\footnotesize{Given actual SRAM cells for use in prototype PUFs, analyzed temperature, current, and other data to create algorithms for determining PUF reliability, resilience, enrollment procedures, and bit selection.}
+\\\multicolumn{2}{c}{} \\
+ \textsc{Aug 2014\textemdash} & Graduate Teaching Assistant \\\textsc{Dec 2014}&\emph{\textsc{UT Austin}}\\&\footnotesize{Teaching assistant for sophomore undergraduate C/C++ class (EE 312: Software Design and Implementation I).}\\
+&\footnotesize{Basic problem solving, design and implementation techniques for imperative programming; structured programming in the C/C++ language; programming idioms; introduction to software design principles, including modularity, coupling and cohesion; introduction to software engineering tools; elementary data structures; asymptotic analysis.
+}
+\\\multicolumn{2}{c}{} \\
+\textsc{Jun 2014\textemdash} & Graduate Technical Intern \\\textsc{May 2015}&\emph{\textsc{Intel Corp}}\\&\footnotesize{Tested, verified, and debugged camera unit memory interface systems. Compiled models, ran regressions, and debugged synthesized Verilog for Intel Atom processors.}
+\\\multicolumn{2}{c}{} \\
+\textsc{Feb 2014\textemdash} & Tutor Level II \\Aug 2014&\emph{\textsc{Tutor.com}}\\&\footnotesize{Tutored high-school and college-level students in Geometry, Algebra, Calculus I, II, III, Discrete Math, Computer Science, and Linear Algebra. Helped students complete homework, study for tests, and learn concepts through the online Tutor.com classroom application via a virtual whiteboard with text and voice features.}
+ \\\multicolumn{2}{c}{} \\
+\textsc{Feb 2012\textemdash} & Undergraduate Technical Intern \\Aug 2013&\emph{\textsc{Intel Corp}}\\&\footnotesize{Worked on gate-level simulation (GLS) for the Intel Atom processor. Compiled models, ran regressions, and debugged synthesized Verilog. Created and maintained validation automation tool (written in C, Perl and Tcl/Tk) which allowed validation engineers to automatically build and fix common build errors quickly.}\\\multicolumn{2}{c}{}
+\end{longtable}
+
+%Section: Computer skills
+\section{Computer Skills}
+\begin{tabular}{rl}
+\textsc{Proficient Languages:}&C/C++, x86 ISA, Julia, Python, ARM ISA, Java, and more\\
+\textsc{Operating Systems:}&Linux/Unix/Unix-based, Windows\\
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Scholarships and Awards}
+\begin{tabular}{rl}
+2014\textemdash \textsc{Current} & Graduate Research and Tuition Grant \\
+\textsc{aug} 2010\textemdash 2014 & Engineering Undergraduate Honors \\
+2012, 2014, 2015 & Intel Individual Contributor Award\\
+2015 & UTexas Hackathon - Dell Innovation Award\\
+
+\end{tabular}
+
+%Section: Other Interests
+\section{Interests and Other}
+\begin{tabular}{rl}
+\textsc{Languages:}&English, French\\
+\textsc{Non-academic:}&Cooking, tennis, running, reading\\
+\textsc{Citizenship:}&US Citizen\\
+\end{tabular}
+
+
+% Basic Knowledge:& \textsc{php}, my\textsc{sql}, \textsc{html}, Access, \textsc{Linux}, ubuntu, {\fb %\LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+%Intermediate Knowledge:& \textsc{vba}, Excel, Word, PowerPoint\\
+%\end{tabular}
+
+%\section{Interests and Activities}
+%Technology, Open-Source, Programming\\
+%Paradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
+%Football, Travelling
+
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
